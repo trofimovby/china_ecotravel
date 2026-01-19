@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Туры в Китай 2026. Великая стена, Панды и Пляжи Хайнаня. Визовая поддержка. Откройте древнюю империю с Ecotravel — ведущим туроператором Беларуси.">
+    <meta name="theme-color" content="#00AEEF">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ecotravel - Туры в Китай 2026">
+    <meta property="og:description" content="Великая стена, Панды и Пляжи Хайнаня. Визовая поддержка. Откройте древнюю империю.">
+    <meta property="og:image" content="https://yoursite.com/og-image-china.jpg">
+
+    <title>Ecotravel - Туры в Китай 2026 | Великая стена, Панды и Пляжи Хайнаня. Визовая поддержка</title>
+
+    <!-- Preconnect для критичных доменов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload критичного hero-изображения -->
+    <link rel="preload" as="image" href="china-hero.webp" fetchpriority="high">
+
+    <!-- Шрифты с font-display: swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Unbounded:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Async загрузка Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <!-- Отложенная загрузка AOS -->
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Unbounded', 'sans-serif'],
+                    },
+                    colors: {
+                        ecoBlue: '#00AEEF',
+                        ecoGreen: '#8DC63F',
+                        ecoPink: '#EC008C',
+                        ecoYellow: '#FFF200',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .bg-gradient-eco { background: linear-gradient(90deg, #00AEEF 0%, #8DC63F 100%); }
+        .text-gradient-eco { background: linear-gradient(90deg, #00AEEF, #EC008C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .border-gradient-bottom { border-bottom: 3px solid; border-image: linear-gradient(to right, #00AEEF, #8DC63F, #FFF200, #EC008C) 1; }
+        .btn-glow:hover { box-shadow: 0 0 25px rgba(0, 174, 239, 0.5); }
+        #mobile-menu { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .menu-open { transform: translateX(0) !important; }
+
+        /* Резервирование пространства для hero-изображения (предотвращение CLS) */
+        .hero-img-container {
+            aspect-ratio: 16 / 9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Оптимизация анимации для производительности */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Минимальные размеры для touch targets */
+        .touch-target {
+            min-width: 44px;
+            min-height: 44px;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 relative selection:bg-ecoPink selection:text-white overflow-x-hidden pt-[90px]">
+
+    <nav class="fixed top-0 left-0 w-full z-[100] bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 h-[90px] flex items-center border-gradient-bottom" role="navigation" aria-label="Основная навигация">
+    <div class="max-w-7xl mx-auto px-6 w-full h-full flex justify-between items-center">
+
+        <a href="#" class="flex-shrink-0 hover:scale-105 transition duration-300 z-50 touch-target flex items-center" aria-label="Ecotravel - главная страница">
+            <img src="logo.png" alt="Логотип Ecotravel" class="h-10 md:h-12 w-auto object-contain" width="160" height="48">
+        </a>
+
+        <div class="hidden md:flex h-full items-center gap-8 text-[15px] font-medium text-gray-600 font-sans">
+            <a href="#why" class="hover:text-ecoBlue transition hover:-translate-y-0.5 touch-target flex items-center h-full">Преимущества</a>
+            <a href="#resorts" class="hover:text-ecoPink transition hover:-translate-y-0.5 touch-target flex items-center h-full">Курорты</a>
+            <a href="#gallery" class="hover:text-ecoPink transition hover:-translate-y-0.5 touch-target flex items-center h-full">Атмосфера</a>
+            <a href="#contact" class="hover:text-ecoGreen transition hover:-translate-y-0.5 touch-target flex items-center h-full">Запись</a>
+            <a href="#offices" class="hover:text-gray-900 transition hover:-translate-y-0.5 touch-target flex items-center h-full">Контакты</a>
+        </div>
+
+        <div class="flex items-center gap-4 md:gap-6 h-full">
+            <a href="tel:+375293657722" class="hidden lg:flex items-center text-sm font-semibold text-gray-500 hover:text-ecoBlue transition whitespace-nowrap font-mono touch-target h-full" aria-label="Позвонить по номеру +375 29 365-77-22">
+                +375 (29) 365-77-22
+            </a>
+
+            <a href="#contact" class="hidden md:flex bg-gradient-eco text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest font-display hover:scale-105 transition transform shadow-md btn-glow touch-target items-center justify-center">
+                Хочу в Китай
+            </a>
+
+            <button id="menu-btn" class="md:hidden text-2xl text-gray-800 z-50 focus:outline-none focus:ring-2 focus:ring-ecoBlue rounded touch-target flex items-center justify-center" aria-label="Открыть меню" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[90] transform translate-x-full flex flex-col items-center justify-center space-y-8 md:hidden" role="dialog" aria-modal="true" aria-label="Мобильное меню">
+        <a href="#why" class="text-2xl font-display font-bold text-gray-800 touch-target" onclick="closeMenu()">Преимущества</a>
+        <a href="#gallery" class="text-2xl font-display font-bold text-gray-800 touch-target" onclick="closeMenu()">Атмосфера</a>
+        <a href="#contact" class="text-2xl font-display font-bold text-gray-800 touch-target" onclick="closeMenu()">Запись</a>
+        <a href="#offices" class="text-2xl font-display font-bold text-gray-800 touch-target" onclick="closeMenu()">Контакты</a>
+        <a href="tel:+375293657722" class="text-xl font-mono font-bold text-ecoBlue mt-4 touch-target" aria-label="Позвонить">+375 (29) 365-77-22</a>
+    </div>
+
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+        <a href="tel:+375293657722" class="w-14 h-14 bg-ecoGreen rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition duration-300 animate-[bounce_2s_infinite] touch-target" aria-label="Позвонить нам">
+            <i class="fa-solid fa-phone text-2xl" aria-hidden="true"></i>
+        </a>
+    </div>
+
+<header class="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden py-12 md:py-16">
+    <div class="absolute inset-0 z-0">
+        <img src="china-hero.webp"
+             alt="Великая китайская стена и традиционная архитектура Китая"
+             class="w-full h-full object-cover object-center brightness-[0.5]"
+             fetchpriority="high">
+
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
+        <div class="inline-block py-2 px-6 border border-white/30 rounded-full bg-white/10 backdrop-blur-md mb-6" data-aos="zoom-in">
+            <span class="text-ecoYellow text-sm font-bold uppercase tracking-widest font-display">🔥 Сезон 2026 открыт</span>
+        </div>
+
+        <h1 class="text-5xl md:text-8xl lg:text-9xl font-display font-black text-white tracking-tighter mb-3 md:mb-4 leading-[0.9] drop-shadow-2xl" data-aos="fade-up">
+            КИТАЙ:<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-ecoBlue via-ecoGreen to-ecoYellow">ДРУГАЯ ПЛАНЕТА</span>
+        </h1>
+
+        <p class="text-xl md:text-2xl text-white font-medium mb-4 md:mb-6 max-w-2xl mx-auto drop-shadow-md opacity-90" data-aos="fade-up" data-aos-delay="200">
+            Великая империя, технологии будущего и тропический рай
+        </p>
+
+        <div class="flex justify-center w-full" data-aos="fade-up" data-aos-delay="300">
+            <a href="#contact" class="inline-flex items-center justify-center px-10 py-5 text-lg md:text-xl font-black text-white transition-all duration-300 bg-ecoPink rounded-full hover:bg-pink-600 shadow-[0_0_40px_rgba(236,0,140,0.6)] hover:scale-105 transform">
+                ПОДОБРАТЬ ТУР
+                <i class="fa-solid fa-plane-departure ml-3"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+    <section id="why" class="py-16 md:py-24 px-6 md:px-12 relative z-20">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-display font-black text-center mb-12 md:mb-16 uppercase" data-aos="fade-up">
+            Почему <span class="text-transparent bg-clip-text bg-gradient-to-r from-ecoBlue to-ecoGreen">Китай?</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <article class="bg-white p-8 rounded-[30px] shadow-xl border-b-8 border-ecoGreen hover:-translate-y-2 transition duration-300 h-full flex flex-col items-center text-center" data-aos="fade-up">
+                <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-6 text-3xl text-ecoGreen">
+                    <i class="fa-solid fa-suitcase-rolling"></i>
+                </div>
+                <h3 class="text-xl font-display font-bold mb-3">Всё включено</h3>
+                <p class="text-gray-600 leading-relaxed">Экскурсии, русскоязычные гиды, трансферы и отели. Организуем каждую деталь вашего путешествия.</p>
+            </article>
+
+            <article class="bg-white p-8 rounded-[30px] shadow-xl border-b-8 border-ecoBlue hover:-translate-y-2 transition duration-300 h-full flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6 text-3xl text-ecoBlue">
+                    <i class="fa-solid fa-passport"></i>
+                </div>
+                <h3 class="text-xl font-display font-bold mb-3">Визовая поддержка</h3>
+                <p class="text-gray-600 leading-relaxed">Помогаем с оформлением документов или организуем групповые туры по безвизовым спискам.</p>
+            </article>
+
+            <article class="bg-white p-8 rounded-[30px] shadow-xl border-b-8 border-ecoYellow hover:-translate-y-2 transition duration-300 h-full flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-16 h-16 bg-yellow-50 rounded-full flex items-center justify-center mb-6 text-3xl text-yellow-500">
+                    <i class="fa-solid fa-yin-yang"></i>
+                </div>
+                <h3 class="text-xl font-display font-bold mb-3">Контрасты</h3>
+                <p class="text-gray-600 leading-relaxed">Древние храмы и футуристичные небоскребы, рисовые террасы и мегаполисы будущего.</p>
+            </article>
+
+            <article class="bg-white p-8 rounded-[30px] shadow-xl border-b-8 border-ecoPink hover:-translate-y-2 transition duration-300 h-full flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-16 h-16 bg-pink-50 rounded-full flex items-center justify-center mb-6 text-3xl text-ecoPink">
+                    <i class="fa-solid fa-bowl-rice"></i>
+                </div>
+                <h3 class="text-xl font-display font-bold mb-3">Гастрономия</h3>
+                <p class="text-gray-600 leading-relaxed">Утка по-пекински, чайные церемонии, димсамы и невероятная уличная еда в каждом городе.</p>
+            </article>
+
+        </div>
+    </div>
+</section>
+    <section class="py-16 md:py-24 px-6 relative z-20 bg-white">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-display font-black text-center mb-12 md:mb-16 uppercase">
+            Китай — это <span class="text-ecoBlue">проще</span>, чем <span class="text-ecoPink">кажется</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+
+            <details class="bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-[30px] shadow-sm hover:border-ecoGreen transition duration-300 cursor-pointer group">
+                <summary class="flex justify-between items-center mb-2 list-none touch-target">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-ecoGreen flex-shrink-0" aria-hidden="true">
+                            <i class="fa-solid fa-passport"></i>
+                        </div>
+                        <h3 class="text-base md:text-lg font-bold group-hover:text-ecoGreen transition">Нужна ли виза?</h3>
+                    </div>
+                    <i class="fa-solid fa-plus text-gray-400 group-hover:text-ecoGreen transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
+                    Всё зависит от маршрута. Для материкового Китая виза нужна — мы берем оформление на себя. А вот на остров Хайнань возможен <strong>безвизовый въезд</strong> в составе наших туристических групп!
+                </p>
+            </details>
+
+            <details class="bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-[30px] shadow-sm hover:border-ecoBlue transition duration-300 cursor-pointer group">
+                <summary class="flex justify-between items-center mb-2 list-none touch-target">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-ecoBlue flex-shrink-0" aria-hidden="true">
+                            <i class="fa-solid fa-wifi"></i>
+                        </div>
+                        <h3 class="text-base md:text-lg font-bold group-hover:text-ecoBlue transition">Работает ли WhatsApp и Instagram?</h3>
+                    </div>
+                    <i class="fa-solid fa-plus text-gray-400 group-hover:text-ecoBlue transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
+                    В Китае заблокированы многие привычные соцсети. Но не волнуйтесь: мы поможем вам заранее настроить надежный VPN перед вылетом, чтобы вы всегда оставались на связи с близкими и могли постить сторис.
+                </p>
+            </details>
+
+            <details class="bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-[30px] shadow-sm hover:border-purple-600 transition duration-300 cursor-pointer group">
+                <summary class="flex justify-between items-center mb-2 list-none touch-target">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 flex-shrink-0" aria-hidden="true">
+                            <i class="fa-solid fa-qrcode"></i>
+                        </div>
+                        <h3 class="text-base md:text-lg font-bold group-hover:text-purple-600 transition">Как платить? Карты работают?</h3>
+                    </div>
+                    <i class="fa-solid fa-plus text-gray-400 group-hover:text-purple-600 transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
+                    Обычные карты Visa/Mastercard работают редко. Китай платит телефоном! Мы поможем установить приложение <strong>Alipay</strong> и привязать вашу карту. Сможете оплачивать всё — от такси до уличной еды — одним сканированием QR-кода.
+                </p>
+            </details>
+
+            <details class="bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-[30px] shadow-sm hover:border-ecoPink transition duration-300 cursor-pointer group">
+                <summary class="flex justify-between items-center mb-2 list-none touch-target">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center text-ecoPink flex-shrink-0" aria-hidden="true">
+                            <i class="fa-solid fa-bowl-rice"></i>
+                        </div>
+                        <h3 class="text-base md:text-lg font-bold group-hover:text-ecoPink transition">Еда очень острая?</h3>
+                    </div>
+                    <i class="fa-solid fa-plus text-gray-400 group-hover:text-ecoPink transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
+                    Китайская кухня очень разная! Да, в провинции Сычуань любят погорячее, но в остальном Китае полно неострых блюд: пельмени, утка по-пекински, лапша и рис. Голодными точно не останетесь!
+                </p>
+            </details>
+
+            <details class="bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-[30px] shadow-sm hover:border-ecoYellow transition duration-300 cursor-pointer group">
+                <summary class="flex justify-between items-center mb-2 list-none touch-target">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600 flex-shrink-0" aria-hidden="true">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+                        <h3 class="text-base md:text-lg font-bold group-hover:text-yellow-600 transition">Когда лучше лететь?</h3>
+                    </div>
+                    <i class="fa-solid fa-plus text-gray-400 group-hover:text-yellow-600 transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
+                    Весна (март-май) и осень (сентябрь-ноябрь) — идеальное время для экскурсионных туров, когда не жарко и нет дождей. А на тропический курорт Хайнань можно смело летать круглый год!
+                </p>
+            </details>
+
+            <details class="bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-[30px] shadow-sm hover:border-blue-600 transition duration-300 cursor-pointer group">
+                <summary class="flex justify-between items-center mb-2 list-none touch-target">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 flex-shrink-0" aria-hidden="true">
+                            <i class="fa-solid fa-language"></i>
+                        </div>
+                        <h3 class="text-base md:text-lg font-bold group-hover:text-blue-600 transition">Языковой барьер?</h3>
+                    </div>
+                    <i class="fa-solid fa-plus text-gray-400 group-hover:text-blue-600 transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
+                    Наши гиды говорят по-русски и решают любые вопросы. В мегаполисах много дублируется на английском, а в глубинке отлично выручают современные онлайн-переводчики в телефоне.
+                </p>
+            </details>
+
+        </div>
+    </div>
+</section>
+
+
+    <section id="gallery" class="py-10 md:py-16 px-4 md:px-12 relative z-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-display font-black mb-8 md:mb-12 flex items-center gap-4" data-aos="fade-right">
+            <div class="w-4 h-12 bg-gradient-eco rounded-full" aria-hidden="true"></div>
+            АТМОСФЕРА
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 auto-rows-fr md:h-[600px]">
+
+            <figure class="md:col-span-2 md:row-span-2 rounded-[30px] overflow-hidden relative group shadow-lg h-[300px] md:h-auto" data-aos="zoom-in">
+                <img src="shanghai-night.webp" alt="Ночной Шанхай, неоновые огни и небоскребы" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
+                <figcaption class="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-lg font-bold shadow-sm text-ecoBlue">
+                    🌃 Киберпанк Шанхая
+                </figcaption>
+            </figure>
+
+            <figure class="md:col-span-1 md:row-span-1 rounded-[30px] overflow-hidden relative group shadow-lg h-[250px] md:h-auto" data-aos="zoom-in" data-aos-delay="100">
+                <img src="great-wall-gallery.webp" alt="Великая Китайская стена" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
+            </figure>
+
+            <figure class="md:col-span-1 md:row-span-1 rounded-[30px] overflow-hidden relative group shadow-lg h-[250px] md:h-auto" data-aos="zoom-in" data-aos-delay="200">
+                <img src="zhangjiajie.webp" alt="Горы Чжанцзяцзе (Аватар)" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
+            </figure>
+
+            <figure class="md:col-span-2 md:row-span-1 rounded-[30px] overflow-hidden relative group shadow-lg h-[200px] md:h-auto" data-aos="zoom-in" data-aos-delay="300">
+                <img src="lanterns.webp" alt="Традиционные красные фонари" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
+                <figcaption class="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-lg font-bold shadow-sm text-ecoPink">
+                    🏮 Магия красных фонарей
+                </figcaption>
+            </figure>
+
+        </div>
+    </div>
+</section>
+
+    <section class="py-16 md:py-24 px-6 relative z-20 bg-white">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-display font-black text-center mb-12 md:mb-16 uppercase">
+            Все <span class="text-ecoBlue">просто</span> и <span class="text-ecoPink">комфортно</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+
+            <details class="bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-[30px] shadow-sm hover:border-ecoBlue transition duration-300 cursor-pointer group">
+                <summary class="flex justify-between items-center mb-2 list-none touch-target">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-ecoBlue flex-shrink-0" aria-hidden="true">
+                            <i class="fa-solid fa-plane"></i>
+                        </div>
+                        <h3 class="text-base md:text-lg font-bold group-hover:text-ecoBlue transition">Долго лететь?</h3>
+                    </div>
+                    <i class="fa-solid fa-plus text-gray-400 group-hover:text-ecoBlue transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
+                    Совсем нет! Прямые рейсы из Минска занимают около 4.5 часов. Вы успеете расслабиться, перекусить — и вот вы уже под египетским солнцем на берегу Красного моря.
+                </p>
+            </details>
+
+            <details class="bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-[30px] shadow-sm hover:border-ecoGreen transition duration-300 cursor-pointer group">
+                <summary class="flex justify-between items-center mb-2 list-none touch-target">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-ecoGreen flex-shrink-0" aria-hidden="true">
+                            <i class="fa-solid fa-passport"></i>
+                        </div>
+                        <h3 class="text-base md:text-lg font-bold group-hover:text-ecoGreen transition">Как с визой и тестами?</h3>
+                    </div>
+                    <i class="fa-solid fa-plus text-gray-400 group-hover:text-ecoGreen transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
+                    Все максимально просто! Виза оформляется прямо в аэропорту по прилету за $25. Никаких ПЦР-тестов, справок и прививок не требуется — берите только паспорт и хорошее настроение!
+                </p>
+            </details>
+
+            <details class="bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-[30px] shadow-sm hover:border-ecoYellow transition duration-300 cursor-pointer group">
+                <summary class="flex justify-between items-center mb-2 list-none touch-target">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600 flex-shrink-0" aria-hidden="true">
+                            <i class="fa-solid fa-martini-glass-citrus"></i>
+                        </div>
+                        <h3 class="text-base md:text-lg font-bold group-hover:text-yellow-600 transition">А как там с алкоголем?</h3>
+                    </div>
+                    <i class="fa-solid fa-plus text-gray-400 group-hover:text-yellow-600 transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
+                    Полная свобода! В отелях с системой All Inclusive алкогольные напитки доступны без ограничений — и местные, и импортные. Египет славится своими барами и отличным сервисом.
+                </p>
+            </details>
+
+            <details class="bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-[30px] shadow-sm hover:border-ecoPink transition duration-300 cursor-pointer group">
+                <summary class="flex justify-between items-center mb-2 list-none touch-target">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center text-ecoPink flex-shrink-0" aria-hidden="true">
+                            <i class="fa-solid fa-child-reaching"></i>
+                        </div>
+                        <h3 class="text-base md:text-lg font-bold group-hover:text-ecoPink transition">Детям не будет скучно?</h3>
+                    </div>
+                    <i class="fa-solid fa-plus text-gray-400 group-hover:text-ecoPink transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
+                    Египет — рай для детей! Аквапарки прямо в отелях, безопасные песчаные пляжи Хургады с пологим входом, теплое море круглый год. Анимация и развлечения на любой возраст!
+                </p>
+            </details>
+
+            <details class="bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-[30px] shadow-sm hover:border-purple-500 transition duration-300 cursor-pointer group">
+                <summary class="flex justify-between items-center mb-2 list-none touch-target">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 flex-shrink-0" aria-hidden="true">
+                            <i class="fa-regular fa-credit-card"></i>
+                        </div>
+                        <h3 class="text-base md:text-lg font-bold group-hover:text-purple-600 transition">Как платить? Карты работают?</h3>
+                    </div>
+                    <i class="fa-solid fa-plus text-gray-400 group-hover:text-purple-600 transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
+                    Доллары принимают везде — в отелях, магазинах, на экскурсиях. Карты работают нестабильно, поэтому рекомендуем брать наличные доллары. Это самый удобный и надежный способ.
+                </p>
+            </details>
+
+            <details class="bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-[30px] shadow-sm hover:border-blue-600 transition duration-300 cursor-pointer group">
+                <summary class="flex justify-between items-center mb-2 list-none touch-target">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 flex-shrink-0" aria-hidden="true">
+                            <i class="fa-solid fa-shirt"></i>
+                        </div>
+                        <h3 class="text-base md:text-lg font-bold group-hover:text-blue-600 transition">Там строгий дресс-код?</h3>
+                    </div>
+                    <i class="fa-solid fa-plus text-gray-400 group-hover:text-blue-600 transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
+                    Никаких ограничений! На территории отелей полная свобода — шорты, платья, купальники. Одевайтесь как удобно. За пределами отеля желательно прикрывать плечи и колени из уважения к местной культуре.
+                </p>
+            </details>
+
+        </div>
+    </div>
+</section>
+
+    <section id="contact" class="py-16 md:py-24 px-6 relative z-30 bg-gray-50">
+    <div class="max-w-5xl mx-auto bg-gradient-to-br from-gray-900 to-gray-800 rounded-[30px] md:rounded-[50px] p-6 md:p-16 text-center text-white shadow-2xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-80 h-80 bg-ecoPink blur-[100px] opacity-30" aria-hidden="true"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-ecoBlue blur-[100px] opacity-30" aria-hidden="true"></div>
+
+        <div class="relative z-10">
+            <span class="text-ecoYellow font-black tracking-widest uppercase mb-4 block text-sm md:text-base">Время приключений</span>
+            <h2 class="text-3xl md:text-6xl font-display font-black mb-6 md:mb-8 leading-tight">
+                ОТКРОЙТЕ<br>ПОДНЕБЕСНУЮ
+            </h2>
+            <p class="text-gray-300 text-lg md:text-xl mb-8 md:mb-12 max-w-2xl mx-auto">
+                Оставьте заявку, и мы составим маршрут мечты.
+            </p>
+
+            <form class="space-y-4 max-w-lg mx-auto" aria-label="Форма заявки на тур">
+                <input type="text" name="name" placeholder="Ваше имя" required class="w-full bg-white/10 border-2 border-white/10 rounded-2xl px-6 py-4 md:py-5 text-base md:text-lg text-white placeholder-gray-400 focus:border-ecoBlue focus:ring-0 transition outline-none backdrop-blur-sm touch-target" aria-label="Введите ваше имя">
+                <input type="tel" name="phone" placeholder="Номер телефона" required class="w-full bg-white/10 border-2 border-white/10 rounded-2xl px-6 py-4 md:py-5 text-base md:text-lg text-white placeholder-gray-400 focus:border-ecoGreen focus:ring-0 transition outline-none backdrop-blur-sm touch-target" aria-label="Введите номер телефона">
+
+                <button type="submit" class="w-full bg-gradient-eco text-white font-display font-black text-lg md:text-xl rounded-2xl py-4 md:py-5 hover:scale-[1.02] transition duration-300 shadow-[0_0_30px_rgba(0,174,239,0.5)] mt-4 touch-target">
+                    ПОЛУЧИТЬ ПРЕДЛОЖЕНИЕ
+                </button>
+            </form>
+            <p class="mt-6 text-sm text-gray-400">Нажимая кнопку, вы даете согласие на обработку персональных данных</p>
+        </div>
+    </div>
+</section>
+
+    <footer id="offices" class="bg-white py-16 md:py-24 px-6 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-display font-black text-center mb-12 md:mb-16 text-gray-900">НАШИ ОФИСЫ</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
+                <article class="bg-gray-50 p-8 md:p-10 rounded-[30px] border border-gray-100 text-center hover:shadow-xl hover:bg-white transition duration-300">
+                    <div class="w-16 h-16 bg-gray-900 text-white rounded-full flex items-center justify-center mb-6 text-2xl mx-auto" aria-hidden="true">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Минск</h3>
+                    <p class="text-gray-500 mb-6 pb-6 border-b border-gray-200">ул. Комсомольская, 14</p>
+                    <div class="text-gray-900 font-bold font-mono text-base md:text-lg">
+                        <a href="tel:+375293657722" class="block hover:text-ecoBlue transition touch-target">+375 (29) 365-77-22</a>
+                        <a href="tel:+375333657722" class="block hover:text-ecoBlue transition touch-target">+375 (33) 365-77-22</a>
+                    </div>
+                </article>
+
+                <article class="bg-gray-50 p-8 md:p-10 rounded-[30px] border border-gray-100 text-center hover:shadow-xl hover:bg-white transition duration-300">
+                    <div class="w-16 h-16 bg-gray-900 text-white rounded-full flex items-center justify-center mb-6 text-2xl mx-auto" aria-hidden="true">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Минск</h3>
+                    <p class="text-gray-500 mb-6 pb-6 border-b border-gray-200">пр-т Машерова, 17</p>
+                    <div class="text-gray-900 font-bold font-mono text-base md:text-lg">
+                        <a href="tel:+375293558833" class="block hover:text-ecoBlue transition touch-target">+375 (29) 355-88-33</a>
+                        <a href="tel:+375333558833" class="block hover:text-ecoBlue transition touch-target">+375 (33) 355-88-33</a>
+                    </div>
+                </article>
+
+                <article class="bg-gray-50 p-8 md:p-10 rounded-[30px] border border-gray-100 text-center hover:shadow-xl hover:bg-white transition duration-300">
+                    <div class="w-16 h-16 bg-gray-900 text-white rounded-full flex items-center justify-center mb-6 text-2xl mx-auto" aria-hidden="true">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Минск</h3>
+                    <p class="text-gray-500 mb-6 pb-6 border-b border-gray-200">пр-т Независимости, 55</p>
+                    <div class="text-gray-900 font-bold font-mono text-base md:text-lg">
+                        <a href="tel:+375296866677" class="block hover:text-ecoBlue transition touch-target">+375 (29) 686-66-77</a>
+                        <a href="tel:+375336866677" class="block hover:text-ecoBlue transition touch-target">+375 (33) 686-66-77</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="text-center border-t border-gray-200 pt-12">
+                <div class="flex justify-center gap-6 mb-10">
+                    <a href="#" class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-gray-800 shadow-sm hover:scale-110 hover:text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:to-purple-600 transition duration-300 touch-target" aria-label="Наш Instagram">
+                        <i class="fa-brands fa-instagram text-2xl" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-gray-800 shadow-sm hover:scale-110 hover:text-white hover:bg-ecoBlue transition duration-300 touch-target" aria-label="Наш Telegram">
+                        <i class="fa-brands fa-telegram text-2xl" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-gray-800 shadow-sm hover:scale-110 hover:text-white hover:bg-purple-600 transition duration-300 touch-target" aria-label="Наш Viber">
+                        <i class="fa-brands fa-viber text-2xl" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <img src="logo.png" alt="Логотип Ecotravel" class="h-16 w-auto mx-auto object-contain opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition duration-500 mb-6" width="160" height="64">
+                <p class="text-gray-400 text-sm">© 2026 Ecotravel. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script>
+        // ==============================================================
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzvQQmZUhZo5dyJBckyw3Zhxh5DINC2mVSs77nTx8ubHL1yS1Lqk4Upcz2sbAlA4Oa1/exec';
+        // ==============================================================
+
+        // --- Инициализация (AOS и Меню) ---
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof AOS !== 'undefined') AOS.init({ duration: 800, offset: 50, once: true });
+        });
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('menu-open');
+                const icon = menuBtn.querySelector('i');
+                if(icon) icon.classList.toggle('fa-xmark');
+                if(icon) icon.classList.toggle('fa-bars');
+            });
+        }
+        function closeMenu() {
+            if(mobileMenu) mobileMenu.classList.remove('menu-open');
+        }
+
+        // === ОТПРАВКА ФОРМЫ С ПРОВЕРКОЙ ===
+        const contactForm = document.querySelector('form');
+
+        if (contactForm) {
+            // Ограничиваем ввод в поле телефона (только цифры, +, пробелы, скобки)
+            const phoneField = contactForm.querySelector('input[name="phone"]');
+            phoneField.addEventListener('input', function(e) {
+                // Разрешаем только цифры, +, -, (, ), и пробел
+                this.value = this.value.replace(/[^0-9+\-()\s]/g, '');
+            });
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const nameInput = contactForm.querySelector('input[name="name"]');
+                const phoneInput = contactForm.querySelector('input[name="phone"]');
+                let phoneValue = phoneInput.value;
+
+                // --- БЛОК ВАЛИДАЦИИ (ПРОВЕРКИ) ---
+
+                // 1. Убираем всё лишнее, оставляем только цифры и плюс
+                let cleanPhone = phoneValue.replace(/[^0-9+]/g, '');
+
+                // 2. Авто-коррекция для Беларуси
+                // Если начали с 80... (например 8029...), меняем на +375
+                if (cleanPhone.startsWith('80')) {
+                    cleanPhone = '+375' + cleanPhone.substring(2);
+                }
+                // Если начали с 375... без плюса, добавляем плюс
+                if (cleanPhone.startsWith('375')) {
+                    cleanPhone = '+' + cleanPhone;
+                }
+
+                // 3. Проверка длины (международный формат от 7 до 15 цифр)
+                // cleanPhone.replace(/[^0-9]/g, '').length считает только кол-во цифр
+                const digitCount = cleanPhone.replace(/[^0-9]/g, '').length;
+
+                if (digitCount < 7 || digitCount > 15) {
+                    alert('Пожалуйста, введите корректный номер телефона.\nПример: +375 29 123 45 67');
+
+                    // Подсветим поле красным на секунду
+                    phoneInput.classList.add('border-red-500', 'bg-red-50');
+                    setTimeout(() => {
+                        phoneInput.classList.remove('border-red-500', 'bg-red-50');
+                    }, 3000);
+                    return; // ОСТАНАВЛИВАЕМ ОТПРАВКУ
+                }
+                // ----------------------------------
+
+
+                // Визуальный эффект
+                const originalBtnText = submitBtn.innerText;
+                submitBtn.innerText = 'ОТПРАВЛЯЕМ...';
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+
+                const formData = new FormData();
+                formData.append("name", nameInput.value);
+                formData.append("phone", cleanPhone); // Отправляем уже чистый, красивый номер
+                formData.append("source", "Китай");
+
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: "POST",
+                    body: formData,
+                    mode: 'no-cors'
+                })
+                .then(() => {
+                    alert('Спасибо! Ваша заявка принята.');
+                    contactForm.reset();
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                    alert('Ошибка соединения.');
+                })
+                .finally(() => {
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>
