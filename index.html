@@ -863,6 +863,73 @@
         </div>
     </div>
 </section>
+    <script>
+    function switchContactMethod(method) {
+        const tabCall = document.getElementById('tabCall');
+        const tabWrite = document.getElementById('tabWrite');
+        const blockCall = document.getElementById('blockCall');
+        const blockWrite = document.getElementById('blockWrite');
+        const inputMethod = document.getElementById('inputMethodType');
+
+        if (method === 'call') {
+            // Style Tabs
+            tabCall.classList.add('bg-white', 'text-gray-900', 'shadow-lg');
+            tabCall.classList.remove('text-gray-400', 'hover:text-white');
+
+            tabWrite.classList.remove('bg-white', 'text-gray-900', 'shadow-lg');
+            tabWrite.classList.add('text-gray-400', 'hover:text-white');
+
+            // Toggle Blocks
+            blockCall.classList.remove('hidden');
+            blockWrite.classList.add('hidden');
+
+            // Set Value
+            inputMethod.value = 'phone';
+        } else {
+            // Style Tabs
+            tabWrite.classList.add('bg-white', 'text-gray-900', 'shadow-lg');
+            tabWrite.classList.remove('text-gray-400', 'hover:text-white');
+
+            tabCall.classList.remove('bg-white', 'text-gray-900', 'shadow-lg');
+            tabCall.classList.add('text-gray-400', 'hover:text-white');
+
+            // Toggle Blocks
+            blockWrite.classList.remove('hidden');
+            blockCall.classList.add('hidden');
+
+            // Set Value
+            inputMethod.value = 'messenger';
+        }
+    }
+
+    function selectMessenger(app) {
+        // Reset all buttons
+        document.querySelectorAll('.messenger-btn').forEach(btn => {
+            btn.classList.remove('bg-white/20', 'border-white/50', 'ring-2', 'ring-white/50');
+            btn.classList.add('bg-white/5', 'border-white/10');
+            // Reset icon colors inside
+            const icon = btn.querySelector('i');
+            icon.classList.remove('text-[#229ED9]', 'text-[#25D366]', 'text-[#7360F2]');
+            icon.classList.add('text-gray-400');
+        });
+
+        // Set hidden input
+        document.getElementById('inputMessengerApp').value = app;
+
+        // Highlight selected
+        const selectedBtn = document.getElementById('btn' + app.charAt(0).toUpperCase() + app.slice(1));
+        selectedBtn.classList.remove('bg-white/5', 'border-white/10');
+        selectedBtn.classList.add('bg-white/20', 'border-white/50'); // Active background
+
+        // Colorize Icon specifically
+        const icon = selectedBtn.querySelector('i');
+        icon.classList.remove('text-gray-400');
+
+        if(app === 'telegram') icon.classList.add('text-[#229ED9]');
+        if(app === 'whatsapp') icon.classList.add('text-[#25D366]');
+        if(app === 'viber') icon.classList.add('text-[#7360F2]');
+    }
+</script>
 
     <footer id="offices" class="bg-white py-16 md:py-24 px-6 border-t border-gray-100">
         <div class="max-w-7xl mx-auto">
