@@ -56,6 +56,19 @@
     </script>
 
     <style>
+        /* Анимация покачивания пальм */
+@keyframes sway {
+    0% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+.animate-sway-slow {
+    animation: sway 5s ease-in-out infinite alternate;
+    transform-origin: top left; /* Точка крепления ветки */
+}
+.animate-sway-fast {
+    animation: sway 3.5s ease-in-out infinite alternate;
+    transform-origin: top right;
+}
         .bg-gradient-eco { background: linear-gradient(90deg, #00AEEF 0%, #8DC63F 100%); }
         .text-gradient-eco { background: linear-gradient(90deg, #00AEEF, #EC008C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .border-gradient-bottom { border-bottom: 3px solid; border-image: linear-gradient(to right, #00AEEF, #8DC63F, #FFF200, #EC008C) 1; }
@@ -135,32 +148,34 @@
 
 <header class="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden py-12 md:py-16">
     <div class="absolute inset-0 z-0">
-        <img src="china-hero.webp"
-             alt="Великая китайская стена и традиционная архитектура Китая"
-             class="w-full h-full object-cover object-center brightness-[0.5]"
+        <img src="hainan-hero.webp"
+             alt="Пляжи Хайнаня и отель Атлантис"
+             class="w-full h-full object-cover object-center brightness-[0.6]"
              fetchpriority="high">
-
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white"></div>
     </div>
 
     <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
         <div class="inline-block py-2 px-6 border border-white/30 rounded-full bg-white/10 backdrop-blur-md mb-6" data-aos="zoom-in">
-            <span class="text-ecoYellow text-sm font-bold uppercase tracking-widest font-display">🔥 Сезон 2026 открыт</span>
+            <span class="text-ecoYellow text-sm md:text-base font-bold uppercase tracking-widest font-display flex items-center gap-2">
+                <i class="fa-solid fa-plane-up"></i>
+                Прямые рейсы из Минска и Москвы
+            </span>
         </div>
 
         <h1 class="text-5xl md:text-8xl lg:text-9xl font-display font-black text-white tracking-tighter mb-3 md:mb-4 leading-[0.9] drop-shadow-2xl" data-aos="fade-up">
-            КИТАЙ:<br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-ecoBlue via-ecoGreen to-ecoYellow">ДРУГАЯ ПЛАНЕТА</span>
+            ХАЙНАНЬ:<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-ecoBlue via-ecoGreen to-ecoYellow">ВОСТОЧНЫЕ ГАВАЙИ</span>
         </h1>
 
         <p class="text-xl md:text-2xl text-white font-medium mb-4 md:mb-6 max-w-2xl mx-auto drop-shadow-md opacity-90" data-aos="fade-up" data-aos-delay="200">
-            Великая империя, технологии будущего и тропический рай
+            Белоснежные пляжи, медицина долголетия и тропический рай без визы
         </p>
 
         <div class="flex justify-center w-full" data-aos="fade-up" data-aos-delay="300">
-            <a href="#contact" class="inline-flex items-center justify-center px-10 py-5 text-lg md:text-xl font-black text-white transition-all duration-300 bg-ecoPink rounded-full hover:bg-pink-600 shadow-[0_0_40px_rgba(236,0,140,0.6)] hover:scale-105 transform">
-                ПОДОБРАТЬ ТУР
-                <i class="fa-solid fa-plane-departure ml-3"></i>
+            <a href="#contact" class="inline-flex items-center justify-center px-10 py-5 text-lg md:text-xl font-black text-white transition-all duration-300 bg-ecoPink rounded-full hover:bg-pink-600 shadow-[0_0_40px_rgba(236,0,140,0.6)] hover:scale-105 transform group">
+                ХОЧУ НА МОРЕ
+                <i class="fa-solid fa-umbrella-beach ml-3 group-hover:rotate-12 transition-transform"></i>
             </a>
         </div>
     </div>
@@ -396,151 +411,61 @@
     <section id="resorts" class="py-16 md:py-24 px-6 relative z-20 bg-white">
     <div class="max-w-7xl mx-auto">
         <h2 class="text-4xl md:text-6xl font-display font-black text-center mb-4 uppercase" data-aos="fade-up">
-            ПОПУЛЯРНЫЕ <span class="text-gradient-eco">НАПРАВЛЕНИЯ</span>
+            ЛУЧШИЕ <span class="text-gradient-eco">БУХТЫ</span>
         </h2>
         <p class="text-center text-gray-600 text-lg md:text-xl mb-12 md:mb-16 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-            От древних храмов до небоскребов будущего. Выберите, с чего начнется ваше великое китайское путешествие.
+            Остров один, но отдых разный. Выберите свою идеальную бухту.
         </p>
 
-        <div class="hidden md:grid md:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-            <article class="md:col-span-2 md:row-span-2 bg-white rounded-[40px] overflow-hidden shadow-xl hover:-translate-y-2 transition duration-500 group border border-gray-100 relative h-[500px]" data-aos="zoom-in">
-                <img src="beijing.webp" alt="Пекин" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
+            <article class="bg-white rounded-[40px] overflow-hidden shadow-xl hover:-translate-y-2 transition duration-500 group border border-gray-100 relative h-[350px]" data-aos="zoom-in">
+                <img src="yalong.webp" alt="Ялонг Бэй" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-8 text-white">
-                    <h3 class="text-4xl font-display font-black mb-2">Пекин</h3>
-                    <p class="text-white/90 text-lg">Сердце империи: Запретный город и Великая Стена</p>
+                    <div class="bg-ecoYellow text-gray-900 text-xs font-bold px-3 py-1 rounded-full inline-block mb-2">LUXURY</div>
+                    <h3 class="text-3xl font-display font-black mb-2">Ялонг Бэй</h3>
+                    <p class="text-white/90 text-lg">Самое чистое море, элитные отели и релакс. "Китайские Мальдивы".</p>
                 </div>
             </article>
 
-            <article class="bg-white rounded-[40px] overflow-hidden shadow-xl hover:-translate-y-2 transition duration-500 group border border-gray-100 relative h-[240px]" data-aos="zoom-in" data-aos-delay="100">
-                <img src="shanghai.webp" alt="Шанхай" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 p-6 text-white">
-                    <h3 class="text-xl font-display font-bold">Шанхай</h3>
-                    <p class="text-sm opacity-90">Город будущего и Вайтань</p>
-                </div>
-            </article>
-
-            <article class="bg-white rounded-[40px] overflow-hidden shadow-xl hover:-translate-y-2 transition duration-500 group border border-gray-100 relative h-[240px]" data-aos="zoom-in" data-aos-delay="200">
-                <img src="hainan.webp" alt="Хайнань" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 p-6 text-white">
-                    <h3 class="text-xl font-display font-bold">Хайнань</h3>
-                    <p class="text-sm opacity-90">Тропический рай: море и солнце</p>
-                </div>
-            </article>
-
-            <article class="bg-white rounded-[40px] overflow-hidden shadow-xl hover:-translate-y-2 transition duration-500 group border border-gray-100 relative h-[240px]" data-aos="zoom-in" data-aos-delay="300">
-                <img src="chengdu.webp" alt="Чэнду" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 p-6 text-white">
-                    <h3 class="text-xl font-display font-bold">Чэнду</h3>
-                    <p class="text-sm opacity-90">Родина панд и острая кухня</p>
-                </div>
-            </article>
-
-            <article class="bg-white rounded-[40px] overflow-hidden shadow-xl hover:-translate-y-2 transition duration-500 group border border-gray-100 relative h-[240px]" data-aos="zoom-in" data-aos-delay="400">
-                <img src="xian.webp" alt="Сиань" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 p-6 text-white">
-                    <h3 class="text-xl font-display font-bold">Сиань</h3>
-                    <p class="text-sm opacity-90">Терракотовая армия и история</p>
-                </div>
-            </article>
-
-            <article class="md:col-span-2 bg-white rounded-[40px] overflow-hidden shadow-xl hover:-translate-y-2 transition duration-500 group border border-gray-100 relative h-[240px]" data-aos="zoom-in" data-aos-delay="500">
-                <img src="hongkong.webp" alt="Гонконг" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
+            <article class="bg-white rounded-[40px] overflow-hidden shadow-xl hover:-translate-y-2 transition duration-500 group border border-gray-100 relative h-[350px]" data-aos="zoom-in" data-aos-delay="100">
+                <img src="dadonghai.webp" alt="Дадунхай" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-8 text-white">
-                    <h3 class="text-2xl font-display font-bold mb-1">Гонконг</h3>
-                    <p class="text-white/90">Азиатский Нью-Йорк, беспошлинный шопинг</p>
+                    <div class="bg-ecoPink text-white text-xs font-bold px-3 py-1 rounded-full inline-block mb-2">АКТИВНЫЙ ОТДЫХ</div>
+                    <h3 class="text-3xl font-display font-black mb-2">Дадунхай</h3>
+                    <p class="text-white/90 text-lg">Центр жизни: бары, кафе с русской кухней, шопинг и тусовки.</p>
                 </div>
             </article>
 
-            <article class="md:col-span-2 bg-white rounded-[40px] overflow-hidden shadow-xl hover:-translate-y-2 transition duration-500 group border border-gray-100 relative h-[240px]" data-aos="zoom-in" data-aos-delay="600">
-                <img src="guilin.webp" alt="Гуйлинь" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
+            <article class="bg-white rounded-[40px] overflow-hidden shadow-xl hover:-translate-y-2 transition duration-500 group border border-gray-100 relative h-[350px]" data-aos="zoom-in" data-aos-delay="200">
+                <img src="sanyabay.webp" alt="Санья Бэй" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-8 text-white">
-                    <h3 class="text-2xl font-display font-bold mb-1">Гуйлинь</h3>
-                    <p class="text-white/90">Нереальные горы и рисовые террасы</p>
+                    <div class="bg-ecoBlue text-white text-xs font-bold px-3 py-1 rounded-full inline-block mb-2">ЗАКАТЫ И ПРОГУЛКИ</div>
+                    <h3 class="text-3xl font-display font-black mb-2">Санья Бэй</h3>
+                    <p class="text-white/90 text-lg">Знаменитый «Кокосовый коридор», близость к центру и доступные цены.</p>
                 </div>
             </article>
 
-        </div>
+            <article class="bg-white rounded-[40px] overflow-hidden shadow-xl hover:-translate-y-2 transition duration-500 group border border-gray-100 relative h-[350px]" data-aos="zoom-in" data-aos-delay="300">
+                <img src="haitang.webp" alt="Хайтан Бэй" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 text-white">
+                    <div class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full inline-block mb-2">VIP & SHOPPING</div>
+                    <h3 class="text-3xl font-display font-black mb-2">Хайтан Бэй</h3>
+                    <p class="text-white/90 text-lg">Отель Atlantis, самый большой Duty Free в мире и уединение.</p>
+                </div>
+            </article>
 
-        <div class="md:hidden overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-6 px-6 pb-8" style="scrollbar-width: none; -ms-overflow-style: none;">
-            <div class="flex gap-4 w-max">
-                <article class="w-[85vw] max-w-[320px] bg-white rounded-[30px] overflow-hidden shadow-lg snap-center relative h-[400px]">
-                    <img src="beijing.webp" class="w-full h-full object-cover" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 text-white">
-                        <h3 class="text-2xl font-bold">Пекин</h3>
-                        <p class="text-sm opacity-90">Запретный город, Стена</p>
-                    </div>
-                </article>
-
-                <article class="w-[85vw] max-w-[320px] bg-white rounded-[30px] overflow-hidden shadow-lg snap-center relative h-[400px]">
-                    <img src="shanghai.webp" class="w-full h-full object-cover" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 text-white">
-                        <h3 class="text-2xl font-bold">Шанхай</h3>
-                        <p class="text-sm opacity-90">Город будущего</p>
-                    </div>
-                </article>
-
-                <article class="w-[85vw] max-w-[320px] bg-white rounded-[30px] overflow-hidden shadow-lg snap-center relative h-[400px]">
-                    <img src="hainan.webp" class="w-full h-full object-cover" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 text-white">
-                        <h3 class="text-2xl font-bold">Хайнань</h3>
-                        <p class="text-sm opacity-90">Море и солнце</p>
-                    </div>
-                </article>
-
-                <article class="w-[85vw] max-w-[320px] bg-white rounded-[30px] overflow-hidden shadow-lg snap-center relative h-[400px]">
-                    <img src="chengdu.webp" class="w-full h-full object-cover" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 text-white">
-                        <h3 class="text-2xl font-bold">Чэнду</h3>
-                        <p class="text-sm opacity-90">Панды и кухня</p>
-                    </div>
-                </article>
-
-                <article class="w-[85vw] max-w-[320px] bg-white rounded-[30px] overflow-hidden shadow-lg snap-center relative h-[400px]">
-                    <img src="xian.webp" class="w-full h-full object-cover" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 text-white">
-                        <h3 class="text-2xl font-bold">Сиань</h3>
-                        <p class="text-sm opacity-90">Терракотовая армия</p>
-                    </div>
-                </article>
-
-                <article class="w-[85vw] max-w-[320px] bg-white rounded-[30px] overflow-hidden shadow-lg snap-center relative h-[400px]">
-                    <img src="hongkong.webp" class="w-full h-full object-cover" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 text-white">
-                        <h3 class="text-2xl font-bold">Гонконг</h3>
-                        <p class="text-sm opacity-90">Шопинг и небоскребы</p>
-                    </div>
-                </article>
-
-                <article class="w-[85vw] max-w-[320px] bg-white rounded-[30px] overflow-hidden shadow-lg snap-center relative h-[400px]">
-                    <img src="guilin.webp" class="w-full h-full object-cover" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 text-white">
-                        <h3 class="text-2xl font-bold">Гуйлинь</h3>
-                        <p class="text-sm opacity-90">Горы и террасы</p>
-                    </div>
-                </article>
-            </div>
         </div>
     </div>
 </section>
     <section class="py-16 md:py-24 px-6 relative z-20 bg-white">
     <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl md:text-5xl font-display font-black text-center mb-12 md:mb-16 uppercase">
-            Китай — это <span class="text-ecoBlue">проще</span>, чем <span class="text-ecoPink">кажется</span>
+            Хайнань — это <span class="text-ecoBlue">проще</span>, чем <span class="text-ecoPink">кажется</span>
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
@@ -556,7 +481,7 @@
                     <i class="fa-solid fa-plus text-gray-400 group-hover:text-ecoGreen transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
                 </summary>
                 <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
-                    Всё зависит от маршрута. Для материкового Китая виза нужна — мы берем оформление на себя. А вот на остров Хайнань возможен <strong>безвизовый въезд</strong> в составе наших туристических групп!
+                    Нет, виза не нужна.
                 </p>
             </details>
 
@@ -571,7 +496,7 @@
                     <i class="fa-solid fa-plus text-gray-400 group-hover:text-ecoBlue transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
                 </summary>
                 <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
-                    В Китае заблокированы многие привычные соцсети. Но не волнуйтесь: мы поможем вам заранее настроить надежный VPN перед вылетом, чтобы вы всегда оставались на связи с близкими и могли постить сторис.
+                    В Китае действует "Золотой щит", блокирующий соцсети. Но не волнуйтесь: мы поможем вам заранее установить надежный VPN или настроить роуминг, чтобы вы всегда оставались на связи и могли постить сторис с пляжа.
                 </p>
             </details>
 
@@ -586,7 +511,7 @@
                     <i class="fa-solid fa-plus text-gray-400 group-hover:text-purple-600 transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
                 </summary>
                 <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
-                    Обычные карты Visa/Mastercard работают редко. Китай платит телефоном! Мы поможем установить приложение <strong>Alipay</strong> и привязать вашу карту. Сможете оплачивать всё — от такси до уличной еды — одним сканированием QR-кода.
+                    Обычные карты Visa/Mastercard работают редко. Китай платит телефоном! Мы поможем установить приложение <strong>Alipay</strong> и привязать вашу карту. Сможете оплачивать всё — от кокоса на пляже до ужина в ресторане — одним сканированием QR-кода.
                 </p>
             </details>
 
@@ -594,14 +519,14 @@
                 <summary class="flex justify-between items-center mb-2 list-none touch-target">
                     <div class="flex items-center gap-4">
                         <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center text-ecoPink flex-shrink-0" aria-hidden="true">
-                            <i class="fa-solid fa-bowl-rice"></i>
+                            <i class="fa-solid fa-shrimp"></i>
                         </div>
-                        <h3 class="text-base md:text-lg font-bold group-hover:text-ecoPink transition">Еда очень острая?</h3>
+                        <h3 class="text-base md:text-lg font-bold group-hover:text-ecoPink transition">Что там с едой?</h3>
                     </div>
                     <i class="fa-solid fa-plus text-gray-400 group-hover:text-ecoPink transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
                 </summary>
                 <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
-                    Китайская кухня очень разная! Да, в провинции Сычуань любят погорячее, но в остальном Китае полно неострых блюд: пельмени, утка по-пекински, лапша и рис. Голодными точно не останетесь!
+                    Хайнань — это рай для любителей <strong>свежайших морепродуктов</strong> и тропических фруктов! Здесь много не острых блюд. А в бухте Дадунхай десятки кафе с меню на русском языке, борщом и пельменями. Голодными точно не останетесь!
                 </p>
             </details>
 
@@ -616,7 +541,7 @@
                     <i class="fa-solid fa-plus text-gray-400 group-hover:text-yellow-600 transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
                 </summary>
                 <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
-                    Весна (март-май) и осень (сентябрь-ноябрь) — идеальное время для экскурсионных туров, когда не жарко и нет дождей. А на тропический курорт Хайнань можно смело летать круглый год!
+                    Хайнань — круглогодичный курорт ("Восточные Гавайи"). Здесь всегда тепло! Зимой (ноябрь-март) — идеально комфортная погода +25°C, нет изнуряющей жары. Летом жарче и выше влажность, но вода как парное молоко.
                 </p>
             </details>
 
@@ -631,7 +556,7 @@
                     <i class="fa-solid fa-plus text-gray-400 group-hover:text-blue-600 transition-transform duration-300 text-xl group-open:rotate-45" aria-hidden="true"></i>
                 </summary>
                 <p class="text-gray-600 mt-4 leading-relaxed pl-0 md:pl-14">
-                    Наши гиды говорят по-русски и решают любые вопросы. В мегаполисах много дублируется на английском, а в глубинке отлично выручают современные онлайн-переводчики в телефоне.
+                    Наши гиды говорят по-русски и всегда на связи. Хайнань очень ориентирован на туристов из СНГ: во многих ресторанах есть меню на русском, а современные приложения-переводчики в телефоне позволяют легко общаться с местными.
                 </p>
             </details>
 
@@ -644,29 +569,30 @@
     <div class="max-w-7xl mx-auto">
         <h2 class="text-3xl md:text-5xl font-display font-black mb-8 md:mb-12 flex items-center gap-4" data-aos="fade-right">
             <div class="w-4 h-12 bg-gradient-eco rounded-full" aria-hidden="true"></div>
-            АТМОСФЕРА
+            АТМОСФЕРА <span class="text-ecoGreen">ХАЙНАНЯ</span>
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 auto-rows-fr md:h-[600px]">
 
-            <figure class="md:col-span-2 md:row-span-2 rounded-[30px] overflow-hidden relative group shadow-lg h-[300px] md:h-auto" data-aos="zoom-in">
-                <img src="shanghai-night.webp" alt="Ночной Шанхай, неоновые огни и небоскребы" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
-                <figcaption class="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-lg font-bold shadow-sm text-ecoBlue">
-                    🌃 Киберпанк Шанхая
+        <div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 auto-rows-fr md:h-[600px]">
+
+            <figure class="md:col-span-2 md:row-span-2 rounded-[30px] overflow-hidden relative group shadow-lg h-[300px] md:h-auto border border-gray-100" data-aos="zoom-in">
+                <img src="guanyin.webp" alt="Статуя Гуаньинь Наньшань в море" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
+                <figcaption class="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-5 py-3 rounded-2xl font-bold shadow-sm text-ecoBlue flex items-center gap-2">
+                    <i class="fa-solid fa-hands-praying"></i>
+                    Святыня Наньшань
                 </figcaption>
             </figure>
 
-            <figure class="md:col-span-1 md:row-span-1 rounded-[30px] overflow-hidden relative group shadow-lg h-[250px] md:h-auto" data-aos="zoom-in" data-aos-delay="100">
-                <img src="great-wall-gallery.webp" alt="Великая Китайская стена" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
+            <figure class="md:col-span-1 md:row-span-1 rounded-[30px] overflow-hidden relative group shadow-lg h-[250px] md:h-auto border border-gray-100" data-aos="zoom-in" data-aos-delay="100">
+                <img src="massage.webp" alt="Китайская медицина и массаж" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
+                <figcaption class="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-xl font-bold shadow-sm text-gray-800 text-sm">
+                    💆‍♀️ Медицина и релакс
+                </figcaption>
             </figure>
 
-            <figure class="md:col-span-1 md:row-span-1 rounded-[30px] overflow-hidden relative group shadow-lg h-[250px] md:h-auto" data-aos="zoom-in" data-aos-delay="200">
-                <img src="zhangjiajie.webp" alt="Горы Чжанцзяцзе (Аватар)" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
-            </figure>
-
-            <figure class="md:col-span-2 md:row-span-1 rounded-[30px] overflow-hidden relative group shadow-lg h-[200px] md:h-auto" data-aos="zoom-in" data-aos-delay="300">
-                <img src="lanterns.webp" alt="Традиционные красные фонари" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
-                <figcaption class="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-lg font-bold shadow-sm text-ecoPink">
-                    🏮 Магия красных фонарей
+            <figure class="md:col-span-1 md:row-span-1 rounded-[30px] overflow-hidden relative group shadow-lg h-[250px] md:h-auto border border-gray-100" data-aos="zoom-in" data-aos-delay="200">
+                <img src="fruits.webp" alt="Экзотические фрукты и манго" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
+                <figcaption class="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-xl font-bold shadow-sm text-ecoPink text-sm">
+                    🥭 Тропический рай
                 </figcaption>
             </figure>
 
